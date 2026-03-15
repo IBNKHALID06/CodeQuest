@@ -1,0 +1,64 @@
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+thumbs.db
+.AppleDouble
+.LSOverride
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Node.js (if adding build tools later)
+node_modules/
+npm-debug.log
+yarn-error.log
+.npm
+package-lock.json
+yarn.lock
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Build & Distribution
+dist/
+build/
+.dist/
+*.zip
+*.tar.gz
+
+# Logs
+logs/
+*.log
+
+# Browser Cache
+.cache/
+
+# Temporary Files
+*.tmp
+*.bak
+*.backup
+*~
+
+# macOS Specific
+.vscode-settings
+
+# Windows Specific
+desktop.ini

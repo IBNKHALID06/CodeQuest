@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeQuest — Play</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="game-page">
+
+  <!-- ══ HUD ══ -->
+  <header class="hud">
+    <a class="hud-logo" href="index.html">◂ CodeQuest</a>
+
+    <div class="hud-center">
+      <div class="hud-level-info">
+        <span class="hud-label">Level</span>
+        <span class="hud-value" id="hud-level">1 / 10</span>
+      </div>
+      <div class="level-dots" id="level-dots"></div>
+    </div>
+
+    <div class="hud-right">
+      <div class="hud-stat">
+        <span class="hud-label">XP</span>
+        <span class="hud-value gold" id="hud-xp">0</span>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-value accent" id="hud-streak">0 🔥</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ GAME AREA ══ -->
+  <main class="game-area">
+
+    <!-- Challenge panel -->
+    <aside class="challenge-panel">
+      <div class="challenge-header">
+        <span class="challenge-badge" id="challenge-badge">🏷️</span>
+        <div class="challenge-meta">
+          <span class="challenge-chapter" id="challenge-chapter">HTML Basics</span>
+          <span class="challenge-xp" id="challenge-xp">+100 XP</span>
+        </div>
+      </div>
+
+      <h2 class="challenge-title" id="challenge-title">Loading…</h2>
+
+      <!-- Lesson panel -->
+      <div class="lesson-box" id="lesson-box">
+        <div class="lesson-title">📚 Learn</div>
+        <div class="lesson-content" id="lesson-content"></div>
+      </div>
+
+      <p class="challenge-desc" id="challenge-desc"></p>
+
+      <div class="challenge-actions">
+        <button class="btn-hint" id="btn-hint" onclick="showSmallHint()">💡 Show Hint</button>
+        <button class="btn-reset" onclick="resetCode()">↺ Reset</button>
+      </div>
+
+      <div class="hint-box small-hint" id="small-hint-box" style="display:none">
+        <span id="small-hint-text"></span>
+      </div>
+
+      <div class="hint-box full-hint" id="full-hint-box" style="display:none">
+        <div class="hint-warning">⚠️ Full hint shown — failing this level!</div>
+        <code id="full-hint-text"></code>
+      </div>
+
+      <div class="challenge-progress">
+        <div class="cp-bar">
+          <div class="cp-fill" id="cp-fill" style="width:0%"></div>
+        </div>
+        <span class="cp-label" id="cp-label">0 / 15 complete</span>
+      </div>
+    </aside>
+
+    <!-- Editor panel -->
+    <section class="editor-panel">
+      <div class="panel-header">
+        <span class="panel-title">📝 Your Code</span>
+        <span class="editor-lang-badge">HTML</span>
+        <div class="editor-status">
+          <span class="status-dot waiting" id="status-dot"></span>
+          <span id="status-text">Start typing…</span>
+        </div>
+      </div>
+      <div class="editor-wrapper">
+        <div class="line-numbers" id="line-numbers">1</div>
+        <textarea
+          id="code-editor"
+          class="code-editor"
+          placeholder="&lt;!-- Type your HTML here --&gt;"
+          spellcheck="false"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+        ></textarea>
+      </div>
+    </section>
+
+    <!-- Preview panel -->
+    <section class="preview-panel">
+      <div class="panel-header">
+        <span class="panel-title">👁️ Live Preview</span>
+        <div class="preview-pulse" id="preview-pulse"></div>
+      </div>
+      <div class="preview-wrapper">
+        <iframe
+          id="preview-frame"
+          title="Code Preview"
+        ></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ LEVEL COMPLETE OVERLAY ══ -->
+  <div class="win-overlay" id="win-overlay" style="display:none">
+    <div class="win-card">
+      <canvas id="confetti-canvas"></canvas>
+      <div class="win-badge-anim" id="win-badge">🎉</div>
+      <h2 class="win-title">LEVEL COMPLETE!</h2>
+      <div class="win-stars" id="win-stars">⭐⭐⭐</div>
+      <div class="win-xp-gain" id="win-xp-gain">+100 XP</div>
+      <p class="win-message" id="win-message">Nice work!</p>
+      <button class="btn-next" id="btn-next" onclick="nextLevel()">Next Level ▶</button>
+    </div>
+  </div>
+
+  <!-- ══ ALL COMPLETE OVERLAY ══ -->
+  <div class="win-overlay" id="complete-overlay" style="display:none">
+    <div class="win-card">
+      <div class="win-badge-anim">👑</div>
+      <h2 class="win-title">YOU BEAT HTML!</h2>
+      <div class="win-stars">⭐⭐⭐</div>
+      <div class="win-xp-gain" id="final-xp">Total XP: 0</div>
+      <p class="win-message">You're an HTML champion!<br>More languages coming soon…</p>
+      <a class="btn-next" href="index.html">Back to Menu</a>
+    </div>
+  </div>
+
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
+
+</body>
+</html>

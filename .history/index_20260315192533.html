@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeQuest — Learn to Code by Playing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="menu-page">
+
+  <canvas id="bg-canvas"></canvas>
+
+  <main class="menu-main">
+
+    <div class="title-section">
+      <h1 class="game-title">CODE<span class="title-accent">QUEST</span></h1>
+      <p class="game-subtitle">Type code &nbsp;·&nbsp; See magic &nbsp;·&nbsp; Level up</p>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-label">Total XP</span>
+        <span class="stat-value gold" id="total-xp">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Levels Done</span>
+        <span class="stat-value" id="levels-done">0 / 10</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Best Streak</span>
+        <span class="stat-value accent" id="best-streak">0 🔥</span>
+      </div>
+    </div>
+
+    <div class="language-grid">
+
+      <div class="lang-card active" onclick="startGame('html')">
+        <div class="lang-icon">🌐</div>
+        <div class="lang-name">HTML</div>
+        <div class="lang-desc">Structure the web</div>
+        <div class="lang-progress">
+          <div class="progress-bar" id="html-bar" style="width:0%"></div>
+        </div>
+        <div class="lang-levels">10 Levels</div>
+        <div class="play-btn">▶ PLAY</div>
+      </div>
+
+      <div class="lang-card locked">
+        <div class="lang-icon">🎨</div>
+        <div class="lang-name">CSS</div>
+        <div class="lang-desc">Style the web</div>
+        <div class="lang-levels locked-text">🔒 Coming Soon</div>
+      </div>
+
+      <div class="lang-card locked">
+        <div class="lang-icon">⚡</div>
+        <div class="lang-name">JavaScript</div>
+        <div class="lang-desc">Power the web</div>
+        <div class="lang-levels locked-text">🔒 Coming Soon</div>
+      </div>
+
+      <div class="lang-card locked">
+        <div class="lang-icon">🐍</div>
+        <div class="lang-name">Python</div>
+        <div class="lang-desc">Script the world</div>
+        <div class="lang-levels locked-text">🔒 Coming Soon</div>
+      </div>
+
+    </div>
+
+    <div class="how-it-works">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-text">Read the challenge</div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-text">Type your code</div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-text">Watch it come alive</div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-text">Earn XP &amp; advance!</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function loadStats() {
+      const data = JSON.parse(localStorage.getItem('codequest') || '{}');
+      document.getElementById('total-xp').textContent = (data.totalXP || 0).toLocaleString();
+      const completed = (data.completed || []).length;
+      document.getElementById('levels-done').textContent = completed + ' / 10';
+      document.getElementById('best-streak').textContent = (data.bestStreak || 0) + ' 🔥';
+      document.getElementById('html-bar').style.width = ((completed / 10) * 100) + '%';
+    }
+
+    function startGame(lang) {
+      window.location.href = 'game.html?lang=' + lang;
+    }
+
+    // Particle background
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const particles = Array.from({ length: 90 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 2 + 0.5,
+      speedX: (Math.random() - 0.5) * 0.4,
+      speedY: -(Math.random() * 0.5 + 0.15),
+      opacity: Math.random() * 0.45 + 0.1,
+      color: Math.random() > 0.5 ? '#00ff88' : '#00d4ff'
+    }));
+
+    function animateBg() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+        if (p.y < -5) { p.y = canvas.height + 5; p.x = Math.random() * canvas.width; }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.opacity;
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(animateBg);
+    }
+    animateBg();
+
+    loadStats();
+  </script>
+
+</body>
+</html>
