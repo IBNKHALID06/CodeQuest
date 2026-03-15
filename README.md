@@ -5,7 +5,7 @@ An interactive, game-based learning platform for programming languages. Type cod
 ![HTML Track](https://img.shields.io/badge/HTML-Complete-00FF88?style=flat-square)
 ![CSS Track](https://img.shields.io/badge/CSS-Coming%20Soon-808080?style=flat-square)
 ![JavaScript Track](https://img.shields.io/badge/JavaScript-Coming%20Soon-808080?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+![License](https://img.shields.io/badge/License-GPLv3-blueviolet?style=flat-square)
 
 ---
 
@@ -187,6 +187,75 @@ CodeQuest/
 
 ---
 
+## ❓ FAQ
+
+### Gameplay Questions
+
+**Q: I typed `<p>text` but it shows as error. Browsers auto-close tags, why not CodeQuest?**
+A: We require proper closure to teach good HTML habits. Browsers auto-close, but professional code doesn't rely on that. This teaches you the *right* way from day one.
+
+**Q: Can I skip levels?**
+A: No, levels unlock sequentially. This ensures you learn fundamentals before advanced topics. The progression is carefully designed!
+
+**Q: What if I'm stuck?**
+A: Use the hint system! 💡 First click = gentle guidance. Second click = full solution (with a penalty, but you still learn).
+
+**Q: Do my scores save?**
+A: Yes! XP, streak, and progress save to localStorage. Your game persists across browser sessions.
+
+**Q: Can I reset my progress?**
+A: Currently, you'd need to clear localStorage manually (DevTools → Application → Local Storage → Delete). We'll add a button soon!
+
+### Technical Questions
+
+**Q: Why is there no npm/build process?**
+A: CodeQuest is intentionally dependency-free. Pure HTML/CSS/JavaScript = instant play, no setup pain.
+
+**Q: Can I run this offline?**
+A: Yes! Download or clone, open `index.html` in your browser. Works completely offline.
+
+**Q: How does validation work?**
+A: The game uses DOMParser to parse your HTML, then checks:
+1. Raw code contains proper opening/closing tags
+2. DOM contains required elements with correct content
+3. Attributes have non-empty values
+
+**Q: Is my code logged/sent to servers?**
+A: No! Everything runs client-side. Your code never leaves your browser (privacy first! 🔒).
+
+**Q: Why iframe for preview?**
+A: It safely renders your HTML without `<script>` tags breaking the main game. Using `srcdoc` instead of `sandbox` allows `<img>` tags to work.
+
+### Future Questions
+
+**Q: When are CSS/JS/Python tracks coming?**
+A: Working on it! CSS is next. Check [CHANGELOG.md](CHANGELOG.md) for roadmap.
+
+**Q: Can I add my own levels?**
+A: Fork the repo and modify `js/levels.js`! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+**Q: Will there be multiplayer?**
+A: Maybe in v2! Currently single-player only.
+
+**Q: Can I use CodeQuest commercially?**
+A: For non-commercial use only (GPLv3 license). See [LICENSE](LICENSE).
+
+---
+
+## 📸 Screenshots
+
+### Landing Page & Menu
+![CodeQuest Landing Page](CodeQuest.png)
+
+*Your game shows:*
+- CodeQuest title with neon glow effect
+- Player stats (Total XP, Levels Completed, Best Streak)
+- Language selection (HTML unlocked, CSS/JS/Python coming soon)
+- "How It Works" visual guide (Read → Type → Watch → Earn XP)
+- Particle background animation
+
+---
+
 ## 🚧 Future Roadmap
 
 ### CSS Track (Coming Soon)
@@ -256,13 +325,27 @@ Have ideas? Found a bug? Want to build the CSS or JS tracks?
 
 ## 📄 License
 
-This project is licensed under the MIT License — see the LICENSE file for details.
+This project is licensed under the **GNU General Public License v3 (GPLv3)** — see the [LICENSE](LICENSE) file for details.
 
-You're free to:
-- ✅ Use CodeQuest for learning
+### What This Means
+
+**You're FREE to:**
+- ✅ Use CodeQuest for learning (personal or educational)
 - ✅ Fork and modify for your own projects
+- ✅ Study and understand how it works
 - ✅ Deploy to your own server
 - ✅ Build on top of it (CSS/JS/Python tracks)
+- ✅ Share improvements with the community
+
+**You CANNOT:**
+- ❌ Sell CodeQuest or charge money for it
+- ❌ Commercialize it (e.g., "CodeMaster Pro $99")
+- ❌ Remove or change the license
+- ❌ Use it in proprietary closed-source products
+
+**If you modify it:**
+- Share your changes under GPLv3 too
+- Include this license in your distribution
 
 ---
 
