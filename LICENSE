@@ -1,0 +1,41 @@
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+Copyright (C) 2026 IBNKHALID06
+
+CodeQuest is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+CodeQuest is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+---
+
+## Summary of GPLv3
+
+This software is free to:
+✓ Use for any purpose (free or personal)
+✓ Study and understand how it works
+✓ Modify and improve it
+✓ Share with others
+✓ Run and learn from it
+
+But NOT free to:
+✗ Sell the software (proprietary or commercial)
+✗ Remove this license or claim it as your own
+✗ Use in closed-source products
+✗ Distribute without including source code
+
+If you modify CodeQuest, you must:
+• Include this license in your distribution
+• State what changes you made
+• Release your modifications under GPLv3 as well
+
+For full license text, see: https://www.gnu.org/licenses/gpl-3.0.html

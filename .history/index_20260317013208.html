@@ -108,32 +108,12 @@
 
   <script>
     function loadStats() {
-      // Load HTML stats
-      const htmlState = JSON.parse(localStorage.getItem('progress_html') || '{}');
-      const htmlCompleted = (htmlState.completedSet || []).length;
-      const htmlXP = htmlState.totalXP || 0;
-      const htmlStreak = htmlState.streak || 0;
-
-      // Load CSS stats
-      const cssState = JSON.parse(localStorage.getItem('progress_css') || '{}');
-      const cssCompleted = (cssState.completedSet || []).length;
-      const cssXP = cssState.totalXP || 0;
-
-      // Load JS stats
-      const jsState = JSON.parse(localStorage.getItem('progress_js') || '{}');
-      const jsCompleted = (jsState.completedSet || []).length;
-      const jsXP = jsState.totalXP || 0;
-
-      // Update stats display
-      const totalXP = htmlXP + cssXP + jsXP;
-      document.getElementById('total-xp').textContent = totalXP.toLocaleString();
-      document.getElementById('levels-done').textContent = (htmlCompleted + cssCompleted + jsCompleted) + ' / 49';
-      document.getElementById('best-streak').textContent = Math.max(htmlStreak, 0) + ' 🔥';
-
-      // Update progress bars
-      document.getElementById('html-bar').style.width = ((htmlCompleted / 19) * 100) + '%';
-      document.getElementById('css-bar').style.width = ((cssCompleted / 15) * 100) + '%';
-      document.getElementById('js-bar').style.width = ((jsCompleted / 15) * 100) + '%';
+      const data = JSON.parse(localStorage.getItem('codequest') || '{}');
+      document.getElementById('total-xp').textContent = (data.totalXP || 0).toLocaleString();
+      const completed = (data.completed || []).length;
+      document.getElementById('levels-done').textContent = completed + ' / 19';
+      document.getElementById('best-streak').textContent = (data.bestStreak || 0) + ' 🔥';
+      document.getElementById('html-bar').style.width = ((completed / 19) * 100) + '%';
     }
 
     function startGame(lang) {

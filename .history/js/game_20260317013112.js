@@ -353,19 +353,6 @@ function showComplete() {
   completeOverlay.style.display = 'flex';
   finalXPEl.textContent = `Total XP: ${totalXP} | Streak: ${streak} 🔥`;
 
-  // Update completion message based on language
-  const completeTitle = document.getElementById('complete-title');
-  const completeMsg = document.getElementById('complete-message');
-  if (completeTitle) completeTitle.textContent = `YOU BEAT ${currentLanguage.toUpperCase()}!`;
-  if (completeMsg) {
-    const greetings = {
-      html: "You're an HTML architect! Structure is everything.",
-      css: "You're a CSS artist! Design is your superpower.",
-      js: "You're a JavaScript wizard! Logic bends to your will."
-    };
-    completeMsg.innerHTML = (greetings[currentLanguage] || greetings.html) + '<br><br>More languages coming…';
-  }
-
   setTimeout(() => {
     completeOverlay.style.animation = 'fadeIn 0.4s';
   }, 10);
