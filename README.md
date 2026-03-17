@@ -3,8 +3,9 @@
 An interactive, game-based learning platform for programming languages. Type code and watch it come to life in real-time—level up as you learn!
 
 ![HTML Track](https://img.shields.io/badge/HTML-Complete-00FF88?style=flat-square)
-![CSS Track](https://img.shields.io/badge/CSS-Coming%20Soon-808080?style=flat-square)
-![JavaScript Track](https://img.shields.io/badge/JavaScript-Coming%20Soon-808080?style=flat-square)
+![CSS Track](https://img.shields.io/badge/CSS-Complete-00FF88?style=flat-square)
+![JavaScript Track](https://img.shields.io/badge/JavaScript-Complete-00FF88?style=flat-square)
+![Python Track](https://img.shields.io/badge/Python-Coming%20Soon-808080?style=flat-square)
 ![License](https://img.shields.io/badge/License-GPLv3-blueviolet?style=flat-square)
 
 ---
@@ -45,8 +46,29 @@ An interactive, game-based learning platform for programming languages. Type cod
 | **Forms** | 13-15 | `<form>`, `<input>`, `<label>`, `<button>` |
 | **Data & Advanced** | 16-19 | `<table>`, `<textarea>`, comments, meta-linking |
 
-**Key Features:**
-- Gentle pedagogical progression from single tags to multi-element structures
+### CSS Mastery (15 Levels)
+
+| Chapter | Levels | Topics |
+|---------|--------|--------|
+| **CSS Basics** | 1-4 | Selectors, color, font-size, class/ID |
+| **Box Model** | 5-6 | Margin, padding, border |
+| **Flexbox** | 7-9 | Display, justify-content, flex-direction |
+| **Grid** | 10 | Grid layout, columns, rows |
+| **Positioning & Effects** | 11-12 | Absolute positioning, transitions |
+| **Responsive & Animation** | 13-15 | Media queries, @keyframes, complete card |
+
+### JavaScript Mastery (15 Levels)
+
+| Chapter | Levels | Topics |
+|---------|--------|--------|
+| **JS Basics** | 1-2 | Variables, data types |
+| **Operators** | 3-4 | Arithmetic, comparison |
+| **Control Flow** | 5-7 | If/else, for loops, while loops |
+| **Functions** | 8-9 | Functions, arrow functions |
+| **Data Structures** | 10-12 | Arrays, array methods, objects |
+| **DOM & Integration** | 13-15 | DOM selection, content manipulation, advanced |
+
+---
 - Lessons integrated into each level (not just descriptions)
 - Strict validation preventing "premature wins" — ensures proper tag closure
 - Real examples that teach patterns, not spoiler code
@@ -302,18 +324,22 @@ CodeQuest follows these principles:
 
 ## 📊 Statistics
 
-- **19 Levels** in HTML track
-- **1000+ Lines** of CSS (animations, layouts, themes)
-- **350+ Lines** of game logic (state, validation, persistence)
-- **6 Chapters** progressing from basics to advanced
-- **2-Tier Hint System** (gentle → full solution)
+- **49 Total Levels** across 3 languages
+  - 19 HTML levels
+  - 15 CSS levels
+  - 15 JavaScript levels
+- **1200+ Lines** of CSS (animations, layouts, themes)
+- **600+ Lines** of game logic (multi-track engine, validation, persistence)
+- **9 Chapters** progressing from basics to advanced
+- **2-Tier Hint System** (gentle guidance → full solution with penalty)
 - **100% Client-Side** (no backend, no external APIs)
+- **Independent Progress** (each language track separate stats/XP)
 
 ---
 
 ## 🤝 Contributing
 
-Have ideas? Found a bug? Want to build the CSS or JS tracks?
+Have ideas? Found a bug? Want to build the Python track?
 
 1. Fork the repo
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)

@@ -7,6 +7,57 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [2.0.0] — 2026-03-17
+
+### 🎉 CSS & JavaScript Tracks Released!
+
+**CodeQuest now has 49 levels across 3 programming languages.**
+
+Major expansion adding CSS and JavaScript tracks with multi-track game engine supporting independent progress tracking.
+
+### ✨ Added
+
+#### CSS Track (15 Levels)
+- **Curriculum:** Selectors, properties, box model, Flexbox, Grid, positioning, animations, responsive design
+- **Topics:** Classes/IDs, colors, fonts, margins, padding, borders, display properties, transitions, media queries, @keyframes
+- **Validation:** Real-time CSS property checking
+- **Progressive:** From basic selectors to complete styled cards
+
+#### JavaScript Track (15 Levels)
+- **Curriculum:** Variables, operators, control flow, functions, arrays, objects, DOM, events
+- **Topics:** Data types, conditionals, loops, arrow functions, array methods, object manipulation, DOM selection
+- **Validation:** Function execution and result checking
+- **Progressive:** From simple variables to interactive functions
+
+#### Multi-Track Engine
+- URL parameter-based language routing (`?lang=html|css|js`)
+- Independent progress saving per language (localStorage keys: `progress_html`, `progress_css`, `progress_js`)
+- Dynamic UI updates (language badge, completion messages, progress bars)
+- Separate XP pools and streak tracking per language
+- Unified hint system across all tracks
+
+#### New Game Files
+- `js/css-levels.js` — 15 CSS level definitions with htmlTarget for styling
+- `js/js-levels.js` — 15 JavaScript level definitions with validation functions
+- Rewrote `js/game.js` — 400+ lines of multi-track engine code
+
+#### Updated Files
+- `index.html` — CSS and JS tracks now unlocked and playable
+- `game.html` — Dynamic language badge and completion messages
+- `js/levels.js` — Renamed `LEVELS` → `LESSONS` to avoid naming conflicts
+
+### 🎮 How It Works (Updated)
+- **HTML:** Parse and validate DOM structure
+- **CSS:** Apply styles to pre-built HTML and validate computed styles  
+- **JavaScript:** Execute code and validate return values/behavior
+
+### 📊 Stats
+- **Total Levels:** 49 (19 HTML + 15 CSS + 15 JS)
+- **Total XP Available:** 5,200+ XP across all tracks (1,900 HTML + 2,650 CSS + 2,650 JS)
+- **Code Size:** 600+ lines of multi-track engine logic
+
+---
+
 ## [1.0.0] — 2026-03-15
 
 ### 🎉 Initial Release
@@ -88,25 +139,13 @@ All features validated:
 
 ### 🎨 Planned Features
 
-#### CSS Track (v1.1.0)
-- 15 levels on selectors, properties, layout, Flexbox, Grid
-- Pre-built HTML to style
-- Validation via computed styles
-- CSS-specific themes and challenges
-
-#### JavaScript Track (v1.2.0)
-- 15 levels on syntax, DOM, events, functions
-- Console output validation
-- DOM manipulation challenges
-- Real mini-projects (to-do app, calculator, etc.)
-
-#### Python Track (v1.3.0)
+#### Python Track (v3.0.0)
 - 15 levels on fundamentals, data structures, algorithms
 - Browser-based Python execution (PyScript)
 - Console output validation
 - Interactive problem-solving
 
-#### General Improvements (v1.x.x)
+#### General Improvements (v2.x - v3.x)
 - Difficulty stars (easy/medium/hard per level)
 - Mini-projects (multi-level challenges)
 - Achievement system (speedrun, perfect streak, etc.)
@@ -132,10 +171,9 @@ All features validated:
 
 | Version | Date | Status |
 |---------|------|--------|
-| 1.0.0 | 2026-03-15 | ✅ Released |
-| 1.1.0 | TBD | 🔜 CSS Track |
-| 1.2.0 | TBD | 🔜 JS Track |
-| 1.3.0 | TBD | 🔜 Python Track |
+| 2.0.0 | 2026-03-17 | ✅ Released (CSS + JS) |
+| 1.0.0 | 2026-03-15 | ✅ Released (HTML) |
+| 3.0.0 | TBD | 🔜 Python Track |
 
 ---
 
